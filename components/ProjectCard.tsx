@@ -17,7 +17,7 @@ const ProjectCard = ({ projectLink, name, description, techStack, imageUrl }: Pr
                             variant="ghost"
                             className="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3 py-3 flex items-center gap-1 cursor-pointer"
                         >
-                            Project Link <IconLink className="w-3 h-3"/>
+                            Project Link <IconLink className="w-3 h-3" />
                         </Button>
                     </Link>
                 </div>
@@ -32,8 +32,8 @@ const ProjectCard = ({ projectLink, name, description, techStack, imageUrl }: Pr
                 </div>
 
                 <div className="flex gap-2 flex-wrap">
-                    {techStack.map((techStack, index: any) => (
-                        <Badge key={index} variant="secondary"  >{techStack}</Badge>
+                    {techStack.map((tech, index) => (
+                        <Badge key={index} variant="secondary"  >{tech}</Badge>
                     ))}
                 </div>
             </div>

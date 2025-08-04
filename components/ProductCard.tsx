@@ -34,7 +34,7 @@ const ProductCard = ({ name, price, imageUrl, tags, deliveryEnd }: ProductCardPr
                 </div>
 
                 <div className="flex flex-wrap gap-2 mt-2">
-                    {tags.map((tag: any, index: any) => (
+                    {tags.map((tag, index) => (
                         <Badge key={index} variant="secondary">{tag}</Badge>
                     ))}
                 </div>
