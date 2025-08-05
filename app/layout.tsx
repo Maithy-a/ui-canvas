@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maithya",
-  description: "Practice lab for Next JS",
+  title: "ui-canvas",
+  description: "UI Canvas is a personal component library and playground powered by Next.js, React, TypeScript, Tailwind CSS, and shadcn/ui.",
+  icons: {
+    icon: "/favicon/circle.png",
+  },
 };
 
 export default function RootLayout({
