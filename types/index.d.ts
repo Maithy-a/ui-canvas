@@ -22,5 +22,20 @@ type ProjectCardProps = {
     name: string;
     description: string;
     techStack: string[];
+    imageUrl: string;
+}
+
+type HotelCardProps = {
+    name: string;
+    description: string;
+    price: number;
+    stars: number;
+    tags:string[];
+    imageUrl: string;
+}
+
+type ProfileCardProps ={
     imageUrl:string;
+    profileImage:string;
+    
 }

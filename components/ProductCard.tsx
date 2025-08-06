@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 
-const ProductCard = ({ name, price, imageUrl, tags, deliveryEnd }: ProductCardProps) => {
+const ProductCard = ({
+    name,
+    price,
+    imageUrl,
+    tags,
+    deliveryEnd }: ProductCardProps) => {
+        
     return (
         <div className="bg-white rounded-4xl border p-2 shadow-md w-[300px] overflow-hidden">
             <div className="relative">
