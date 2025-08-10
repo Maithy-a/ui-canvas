@@ -1,32 +1,51 @@
 import UserCard from "@/components/UserCard";
 import ProductCard from "@/components/ProductCard";
 import ProjectCard from "@/components/ProjectCard";
-import HotelCard from "@/components/HotelCard";
-import { Products, Projects, Users, Hotels } from "@/constants"
+import { getProjects } from "@/actions/getProjects";
+import { getProducts } from "@/actions/getProducts";
+import { getUsers } from "@/actions/getUsers";
 
-const page = () => {
+
+const page = async () => {
+
+  const projects = await getProjects()
+  const products = await getProducts()
+  const users = await getUsers()
+
   return (
 
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    < div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20" >
 
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
 
         <div className="card-group">
 
-          {Products.map((item) => (
+          {products.map((product) => (
             <ProductCard
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              tags={item.tags}
-              deliveryEnd={item.deliveryEnd}
+              key={product._id?.toString()}
+              name={product.name}
+              price={product.price}
+              imageUrl={product.imageUrl}
+              tags={product.tags}
+              deliveryEnd={product.deliveryEnd}
             />
           ))}
 
-          {Users.map((user) => (
+          {projects.map((project) => (
+            <ProjectCard
+              key={project._id?.toString()}
+              projectLink={project.projectLink}
+              name={project.name}
+              description={project.description}
+              techStack={project.techStack}
+              imageUrl={project.imageUrl}
+            />
+          ))
+          }
+
+          {users.map((user) => (
             <UserCard
-              key={user.id}
+              key={user._id.toString()}
               firstName={user.firstName}
               lastName={user.lastName}
               verified={user.verified}
@@ -37,35 +56,10 @@ const page = () => {
               imageUrl={user.imageUrl}
             />
           ))}
-
-          {Projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              projectLink={project.projectLink}
-              name={project.name}
-              description={project.description}
-              techStack={project.techStack}
-              imageUrl={project.imageUrl}
-            />
-          ))
-          }
-
-          {Hotels.map((hotel) => (
-            <HotelCard
-              key={hotel.id}
-              name={hotel.name}
-              imageUrl={hotel.imageUrl}
-              price={hotel.price}
-              description={hotel.description}
-              stars={hotel.stars}
-              tags={hotel.tags}
-            />
-          ))
-          }
         </div>
       </main>
 
-    </div>
+    </ div>
 
   )
 }
