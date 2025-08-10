@@ -22,7 +22,7 @@ const UserCard = ({
           alt={firstName}
           width={300}
           height={200}
-          className="object-cover rounded-xl max-h-56"
+          className="object-cover w-full rounded-xl h-62 hover:brightness-80 ease-in-out  duration-300 cursor-pointer"
         />
         <div className="absolute top-2 right-2 p-2 rounded-full cursor-pointer glass-effect">
           <BookmarkIcon className="w-3 h-3 text-white" />
@@ -41,14 +41,14 @@ const UserCard = ({
         <p className="text-xs text-gray-600">{bio}</p>
       </div>
 
-      <div className="px-2 mb-3 flex justify-around items-center h-8">
+      <div className="px-2 my-3 flex justify-around items-center h-8">
         <div className="items-center justify-center flex flex-col text-xs">
           <IconStarFilled className="size-3 text-yellow-400 fil" /> {rating}
           <div>Rating</div>
         </div>
         <Separator orientation="vertical" className="mx-4" />
         <div className="items-center justify-center flex flex-col text-xs">
-          $ {earned}
+          $ {earned.toLocaleString()}
           <div>Earned</div>
         </div>
         <Separator orientation="vertical" className="mx-4" />
@@ -58,7 +58,7 @@ const UserCard = ({
         </div>
       </div>
 
-      <Button variant="default" className="w-full rounded-full">
+      <Button variant="default" className="w-full bg-black rounded-full">
         <Mail />
         Get in touch
       </Button>
