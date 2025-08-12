@@ -26,14 +26,15 @@ const page = async () => {
 
         <div className="card-group">
 
-          {products.map((product) => (
-            <ProductCard
-              key={product._id?.toString()}
-              name={product.name}
-              price={product.price}
-              imageUrl={product.imageUrl}
-              tags={product.tags}
-              deliveryEnd={product.deliveryEnd}
+          {profiles.map((profile) => (
+            <ProfileCard
+              key={profile._id?.toString()}
+              name={profile.name}
+              imageUrl={profile.imageUrl}
+              verified={profile.verified}
+              wins={profile.wins}
+              description={profile.description}
+              podiums={profile.podiums}
             />
           ))}
 
@@ -49,6 +50,17 @@ const page = async () => {
           ))
           }
 
+          {products.map((product) => (
+            <ProductCard
+              key={product._id?.toString()}
+              name={product.name}
+              price={product.price}
+              imageUrl={product.imageUrl}
+              tags={product.tags}
+              deliveryEnd={product.deliveryEnd}
+            />
+          ))}
+
           {users.map((user) => (
             <UserCard
               key={user._id.toString()}
@@ -63,17 +75,6 @@ const page = async () => {
             />
           ))}
 
-          {profiles.map((profile) => (
-            <ProfileCard
-              key={profile._id?.toString()}
-              name={profile.name}
-              imageUrl={profile.imageUrl}
-              verified={profile.verified}
-              wins={profile.wins}
-              description={profile.description}
-              podiums={profile.podiums}
-            />
-          ))}
         </div>
       </main>
 
