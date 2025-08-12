@@ -1,4 +1,4 @@
-import { IconUser, IconPlus, IconCheck, IconCircleCheck } from "@tabler/icons-react"
+import { IconUser, IconPlus, IconCircleCheck } from "@tabler/icons-react"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { ProfileCardProps } from "@/types"
