@@ -4,6 +4,8 @@ import ProjectCard from "@/components/ProjectCard";
 import { getProjects } from "@/actions/getProjects";
 import { getProducts } from "@/actions/getProducts";
 import { getUsers } from "@/actions/getUsers";
+import { getProfiles } from "@/actions/getProfiles";
+import ProfileCard from "@/components/ProfileCard";
 
 
 const page = async () => {
@@ -11,6 +13,7 @@ const page = async () => {
   const projects = await getProjects()
   const products = await getProducts()
   const users = await getUsers()
+  const profiles = await getProfiles()
 
   return (
 
@@ -55,6 +58,17 @@ const page = async () => {
               rate={user.rate}
               imageUrl={user.imageUrl}
             />
+          ))}
+
+          {profiles.map((profile) => (
+            <ProfileCard
+              key={profile._id?.toString()}
+              name={profile.name}
+              verified={profile.verified}
+              check={profile.check}
+              imageUrl={profile.imageUrl}
+              followers={profile.followers}
+              description={profile.description} />
           ))}
         </div>
       </main>

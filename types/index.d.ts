@@ -1,3 +1,4 @@
+import { Verified } from 'lucide-react';
 type ProductCardProps = {
     name: string;
     price: number;
@@ -23,4 +24,13 @@ type ProjectCardProps = {
     description: string;
     techStack: string[];
     imageUrl: string;
+}
+
+type ProfileCardProps = {
+    name: string;
+    imageUrl: string;
+    verified: boolean;
+    check: number;
+    description: string;
+    followers: number;
 }
