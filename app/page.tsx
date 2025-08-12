@@ -65,11 +65,12 @@ const page = async () => {
             <ProfileCard
               key={profile._id?.toString()}
               name={profile.name}
+              imageUrl={profile.imageUrl}
               verified={profile.verified}
               check={profile.check}
-              imageUrl={profile.imageUrl}
+              description={profile.description}
               followers={profile.followers}
-              description={profile.description} />
+            />
           ))}
         </div>
       </main>

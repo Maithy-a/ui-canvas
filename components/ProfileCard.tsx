@@ -7,9 +7,9 @@ import { VerifiedIcon } from "lucide-react"
 const ProfileCard = ({
     name,
     imageUrl,
-    description,
     verified,
     check,
+    description,
     followers
 }: ProfileCardProps) => {
     return (
