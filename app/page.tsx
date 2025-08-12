@@ -17,7 +17,6 @@ const page = async () => {
     getProfiles()
   ]);
 
-  console.log("Profiles fetched:", profiles);
 
   return (
 
