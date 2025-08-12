@@ -6,5 +6,7 @@ export async function getProfiles() {
     const db = client.db("next-cards")
     const profiles = await db.collection("profiles").find().toArray()
 
+    console.log("Profiles from DB:", profiles.length, profiles);
+
     return profiles
 }
