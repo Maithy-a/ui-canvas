@@ -37,7 +37,9 @@ const UserCard = ({
             {firstName} {lastName}
           </h3>
           {verified && (
-            <Verified className="w-4 h-4 text-blue-600 shrink-0" title="Verified user" />
+            <Verified className="w-4 h-4 text-blue-600 shrink-0">
+              <title>Verified user</title>
+            </Verified>
           )}
         </div>
         <p className="text-xs text-gray-600 line-clamp-2">{bio}</p>
