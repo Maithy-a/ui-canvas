@@ -14,6 +14,7 @@ const page = async () => {
   const products = await getProducts()
   const users = await getUsers()
   const profiles = await getProfiles()
+  console.log("Profiles fetched:", profiles);
 
   return (
 
