@@ -30,7 +30,7 @@ type ProfileCardProps = {
     name: string;
     imageUrl: string;
     verified: boolean;
-    check: number;
+    wins: number;
     description: string;
-    followers: number;
+    podiums: number;
 }

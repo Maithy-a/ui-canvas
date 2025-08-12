@@ -1,16 +1,16 @@
-import { IconUser, IconPlus, IconCircleCheck } from "@tabler/icons-react"
+import { IconPlus } from "@tabler/icons-react"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { ProfileCardProps } from "@/types"
-import { VerifiedIcon } from "lucide-react"
+import { Trophy, VerifiedIcon, Medal } from "lucide-react"
 
 const ProfileCard = ({
     name,
     imageUrl,
     verified,
-    check,
+    wins,
     description,
-    followers
+    podiums
 }: ProfileCardProps) => {
     return (
         <div className="rounded-4xl bg-white w-[300px] p-1 shadow-xl border border-gray-200">
@@ -39,10 +39,10 @@ const ProfileCard = ({
 
             <div className="px-4 mt-2 mb-3 flex gap-2 text-xs justify-between items-center">
                 <div className="flex items-center gap-2 text-gray-700">
-                    <IconUser className="w-4 h-4" />
-                    <span>{followers}</span>
-                    <IconCircleCheck className="w-4 h-4" />
-                    <span>{check}</span>
+                    <Medal className="w-4 h-4" />
+                    <span>{podiums}</span>
+                    <Trophy className="w-4 h-4" />
+                    <span>{wins}</span>
                 </div>
 
                 <Button

@@ -1,19 +1,22 @@
 import UserCard from "@/components/UserCard";
 import ProductCard from "@/components/ProductCard";
 import ProjectCard from "@/components/ProjectCard";
+import ProfileCard from "@/components/ProfileCard";
 import { getProjects } from "@/actions/getProjects";
 import { getProducts } from "@/actions/getProducts";
 import { getUsers } from "@/actions/getUsers";
 import { getProfiles } from "@/actions/getProfiles";
-import ProfileCard from "@/components/ProfileCard";
 
 
 const page = async () => {
 
-  const projects = await getProjects()
-  const products = await getProducts()
-  const users = await getUsers()
-  const profiles = await getProfiles()
+  const [projects, products, users, profiles] = await Promise.all([
+    getProjects(),
+    getProducts(),
+    getUsers(),
+    getProfiles()
+  ]);
+
   console.log("Profiles fetched:", profiles);
 
   return (
@@ -67,9 +70,9 @@ const page = async () => {
               name={profile.name}
               imageUrl={profile.imageUrl}
               verified={profile.verified}
-              check={profile.check}
+              wins={profile.wins}
               description={profile.description}
-              followers={profile.followers}
+              podiums={profile.podiums}
             />
           ))}
         </div>
